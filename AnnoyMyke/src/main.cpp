@@ -77,6 +77,9 @@ void playMelody(){
 
 // Randomizes Sleep time
 void randomSleep(){
-  sleepTime = random(minTime,maxTime);
-  LowPower.sleep(sleepTime);
+  sleepTime = random(minTime,maxTime);6
+  for (int i = 0; (sleepTime-30000*i) > -1 ;i++){
+    LowPower.sleep(sleepTime);
+  }
+  
 }
