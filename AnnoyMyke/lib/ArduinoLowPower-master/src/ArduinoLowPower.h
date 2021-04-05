@@ -55,7 +55,7 @@ class ArduinoLowPowerClass {
 
 		void sleep(void);
 		void sleep(uint32_t millis);
-		void sleep(int millis) {
+		void sleep(long millis) {
 			sleep((uint32_t)millis);
 		}
 

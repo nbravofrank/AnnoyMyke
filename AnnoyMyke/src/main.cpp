@@ -8,7 +8,7 @@ int buzzer = 6;
 //Sets Random Time Sleep Settings
 static long minTime = 7200000; // 2 Hours
 static long maxTime = 10800000; // 3 Hours
-volatile int sleepTime = 10; 
+volatile long sleepTime = 0; 
 
 //Melody Settings
 int tempo = 180;
@@ -43,6 +43,8 @@ void playMelody();
 void setup() {
   // Pseudo random seed by calling unconnected pin
   randomSeed(analogRead(0));
+
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
@@ -77,9 +79,6 @@ void playMelody(){
 
 // Randomizes Sleep time
 void randomSleep(){
-  sleepTime = random(minTime,maxTime);6
-  for (int i = 0; (sleepTime-30000*i) > -1 ;i++){
-    LowPower.sleep(sleepTime);
-  }
-  
-}
+  sleepTime = random(minTime,maxTime);
+  LowPower.sleep(sleepTime);
+}//randomSleep
