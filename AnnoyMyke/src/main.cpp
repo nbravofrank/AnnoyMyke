@@ -43,8 +43,6 @@ void playMelody();
 void setup() {
   // Pseudo random seed by calling unconnected pin
   randomSeed(analogRead(0));
-
-  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
