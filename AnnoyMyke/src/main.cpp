@@ -7,7 +7,7 @@ int buzzer = 6;
 
 //Sets Random Time Sleep Settings
 static long minTime = 7200000; // 2 Hours
-static long maxTime = 10800000; // 3 Hours
+//static long maxTime = 10800000; // 3 Hours
 volatile long sleepTime = 0; 
 
 //Melody Settings
@@ -77,6 +77,6 @@ void playMelody(){
 
 // Randomizes Sleep time
 void randomSleep(){
-  sleepTime = random(minTime,maxTime);
-  LowPower.sleep(sleepTime);
+  //sleepTime = random(minTime,maxTime);
+  LowPower.sleep(minTime);
 }//randomSleep
